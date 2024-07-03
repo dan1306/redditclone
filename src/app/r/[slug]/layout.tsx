@@ -4,6 +4,7 @@ import { db } from "@/lib/db";
 import { notFound } from "next/navigation";
 import React from "react";
 import { compareAsc, format } from "date-fns";
+import SubscribeLeaveToggle from "@/components/SubscribeLeaveToggle";
 
 const Layout = async ({
         children,
@@ -101,6 +102,11 @@ const Layout = async ({
                                 :
                                 null
                             }
+
+                            {subreddit.creatorId !== session?.user.id ? (
+                                <SubscribeLeaveToggle subredditId={subreddit.id} subredditName={subreddit.name} isSubscribed={isSubscribed} />
+                               
+                            ): (null)}
                         </dl>
 
                     </div>
