@@ -66,13 +66,17 @@ const PostFeed: FC<PostFeedProps> = ({ initialPosts, subredditName }) => {
                 if (index === posts.length - 1) {
                     return (
                         <li key={post.id} ref={ref}>
-                            <Posts commentAmnt={post.comments.length} subredditName={post.subreddit.name } post = {post} />
+                            <Posts commentAmnt={post.comments.length} subredditName={post.subreddit.name} post={post}
+                            currentVote={currentVote} votesAmt={votesAmt}
+                            />
                         </li>
                     )
                 } else {
                     return (
                         // eslint-disable-next-line react/jsx-key
-                        <Posts commentAmnt={post.comments.length}  subredditName={post.subreddit.name} post={post} />
+                        <Posts commentAmnt={post.comments.length} subredditName={post.subreddit.name} post={post}
+                        currentVote={currentVote} votesAmt={votesAmt}
+                        />
                     )
                 }
                 })}
