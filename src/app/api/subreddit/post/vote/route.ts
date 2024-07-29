@@ -39,7 +39,7 @@ export async function PATCH(req: Request) {
             },
         })
 
-        if (!post) {
+        if (!post){ 
             return new Response('Post not found', {
                 status: 404
             })
